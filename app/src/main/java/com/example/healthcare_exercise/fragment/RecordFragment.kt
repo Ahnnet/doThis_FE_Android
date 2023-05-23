@@ -63,7 +63,7 @@ class RecordFragment : Fragment() {
 
         database.addValueEventListener(object: ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.e("파베리스트","캔슬에러")
             }
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
