@@ -28,6 +28,7 @@ class RecordAdapter (private val context: Context): RecyclerView.Adapter<RecordA
         private val part: TextView = itemView.findViewById(R.id.tx_part)
         private val date: TextView = itemView.findViewById(R.id.tx_date)
 
+
         fun bind(item: RecordData){
             num.text = item.num
             result.text = item.result
