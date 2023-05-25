@@ -22,7 +22,7 @@ class RecordAdapter (private val context: Context): RecyclerView.Adapter<RecordA
 
     override fun getItemCount(): Int = datas.size
 
-    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val num: TextView = itemView.findViewById(R.id.tx_num)
         private val result: TextView = itemView.findViewById(R.id.tx_result)
         private val part: TextView = itemView.findViewById(R.id.tx_part)

@@ -55,8 +55,9 @@ class RecordFragment : Fragment() {
         // Firebase realTime Database 연결
         Log.d("파베", "시작")
         // realTime DB
-        database = Firebase.database.getReference().child("/temp/result/drj9802@gmail_com/exercise_Squat_2305092239");
-
+        val testPath = "temp/result/drj9802@gmail_com"
+//        database = Firebase.database.getReference().child("/temp/result/drj9802@gmail_com/exercise_Squat_2305092239");
+        database = Firebase.database.getReference().child(testPath);
         // Adapter 선언
         recordAdapter = RecordAdapter(context)
         binding.rvRecord.adapter = recordAdapter
@@ -68,8 +69,13 @@ class RecordFragment : Fragment() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for(data in dataSnapshot.children){
+                    var record = data.getValue(RecordData::class.java)
+//                    val path2 = data.value.toString()
+//                    var database2 = Firebase.database.getReference().child(testPath+"/"+path2)
+                    Log.d("파베리스트",record?.result.toString()+"  => 출력")
+
 //                    val modelResult = data.getValue(RecordData::class.java)
-                    datas.add(RecordData(result=" 89%", num=recordAdapter.itemCount.toString(), method = "SQUAT1", date = "yymmdd"))
+//                    datas.add(RecordData(result=" 89%", num=recordAdapter.itemCount.toString(), method = "SQUAT1", date = "yymmdd"))
                 }
             }
         })
