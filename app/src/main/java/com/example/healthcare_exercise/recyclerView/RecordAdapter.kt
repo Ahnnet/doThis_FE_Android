@@ -11,6 +11,10 @@ import com.example.healthcare_exercise.R
 
 class RecordAdapter (private val context: Context): RecyclerView.Adapter<RecordAdapter.ViewHolder>(){
     var datas = mutableListOf<RecordData>()
+
+    fun setListData(data:MutableList<RecordData>){
+        datas = data
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.recored_recycler,parent,false)
         return ViewHolder(view)
