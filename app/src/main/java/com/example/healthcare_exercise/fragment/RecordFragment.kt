@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 //import com.google.firebase.database.DataSnapshot
@@ -60,8 +61,15 @@ class RecordFragment : Fragment() {
             Log.i("firebase", "Got value ${it.children.elementAt(0).value.toString()}")
             Log.i("firebase", "Got value ${it.children.elementAt(7).value.toString()}")
             Log.i("firebase", "Got value ${it.children.elementAt(13).value.toString()}")
+//            Log.i("firebase", "Got value ${it.children.elementAt(13).getValue() as RecordData}")
 //            datas.add((it.children.elementAt(0).value.apply {  } as RecordData))
-            datas.add(it.children.elementAt(0))
+            Log.i("aa","ㅅㅅ시작")
+            datas.add(it.children.elementAt(0).getValue<RecordAdapter>() as RecordData)
+            Log.i("aa","ㅅㅅ1111")
+            datas.add(it.children.elementAt(1) as RecordData)
+            datas.add(it.children.elementAt(2) as RecordData)
+            datas.add(it.children.elementAt(3) as RecordData)
+            Log.i("aa","굳")
 
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
