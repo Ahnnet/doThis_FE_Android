@@ -41,6 +41,7 @@ class ExerciseAnalyseFragment : Fragment() {
         var str_uri = arguments?.getString("uri").toString()
         var path = arguments?.getString("path").toString() // 기존에 넘어 오는 path
 
+// 임시 path 시작
         // path for storage
         path = "temp/image/"+path+"/"   // 원래 코드에 적용 시킬 path
 //        path = "temp/image/drj9802@gmail.com/exercise_Squat_2304120145/"    // 임시 path
@@ -51,6 +52,7 @@ class ExerciseAnalyseFragment : Fragment() {
 
         // temp/result/drj9802@gmail.com/exercise_Squat_2304120140/.json
         // temp/result/temp/image/drj9802@gmail.com/exercise_Squat_2304120140/.json
+// 임시 path 끝
 
         uri = Uri.parse(str_uri)
 
