@@ -11,6 +11,7 @@ object RetrofitClient {
         .connectTimeout(240, TimeUnit.SECONDS)
         .readTimeout(240, TimeUnit.SECONDS)
         .writeTimeout(240, TimeUnit.SECONDS)
+            //for te test
 //        .connectTimeout(1, TimeUnit.SECONDS)
 //        .readTimeout(1, TimeUnit.SECONDS)
 //        .writeTimeout(1, TimeUnit.SECONDS)
